@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organisasi</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            font-style: italic;
+            margin: 5px 0 0;
+        }
+
+        nav {
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #4CAF50;
+        }
+
+        .container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #4CAF50;
+        }
+
+        .section h2 {
+            margin-top: 0;
+            color: #333;
+            font-size: 28px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav a {
+                padding: 12px 16px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-switcher" onclick="switchLanguage()">EN / ID</div>
+    
+    <header>
+        <h1 id="org-name">Nama Organisasi</h1>
+        <p id="slogan">"Slogan atau Tagline Organisasi"</p>
+    </header>
+
+    <nav>
+        <a href="#visi-misi" id="nav-vision">Visi & Misi</a>
+        <a href="#struktur" id="nav-structure">Struktur Organisasi</a>
+        <a href="#kegiatan" id="nav-activities">Kegiatan</a>
+        <a href="#kontak" id="nav-contact">Kontak</a>
+    </nav>
+
+    <div class="container">
+        <section id="visi-misi" class="section">
+            <h2 id="section-vision-title">Visi & Misi</h2>
+            <p id="vision">Visi: [Tulis visi organisasi di sini]</p>
+            <p id="mission">Misi: [Tulis misi organisasi di sini]</p>
+        </section>
+
+        <section id="struktur" class="section">
+            <h2 id="section-structure-title">Struktur Organisasi</h2>
+            <p id="structure">[Tampilkan struktur organisasi di sini, misalnya dalam bentuk daftar atau diagram.]</p>
+        </section>
+
+        <section id="kegiatan" class="section">
+            <h2 id="section-activities-title">Kegiatan</h2>
+            <p id="activities">[Deskripsikan kegiatan atau program yang dilakukan oleh organisasi Anda.]</p>
+        </section>
+
+        <section id="kontak" class="section">
+            <h2 id="section-contact-title">Kontak</h2>
+            <p id="email">Email: [email@example.com]</p>
+            <p id="phone">Telepon: [Nomor telepon]</p>
+            <p id="address">Alamat: [Alamat lengkap organisasi]</p>
+        </section>
+    </div>
+
+    <footer>
+        <p id="footer-text">&copy; 2025 Nama Organisasi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentLanguage = 'id'; // default language
+
+        function switchLanguage() {
+            if (currentLanguage === 'id') {
+                currentLanguage = 'en';
+                updateContentEnglish();
+            } else {
+                currentLanguage = 'id';
+                updateContentIndonesian();
+            }
+        }
+
+        function updateContentEnglish() {
+            document.getElementById("org-name").innerText = "Organization Name";
+            document.getElementById("slogan").innerText = "\"Organization Slogan or Tagline\"";
+            document.getElementById("nav-vision").innerText = "Vision & Mission";
+            document.getElementById("nav-structure").innerText = "Organization Structure";
+            document.getElementById("nav-activities").innerText = "Activities";
+            document.getElementById("nav-contact").innerText = "Contact";
+
+            document.getElementById("section-vision-title").innerText = "Vision & Mission";
+            document.getElementById("vision").innerText = "Vision: [Write your organization’s vision here]";
+            document.getElementById("mission").innerText = "Mission: [Write your organization’s mission here]";
+
+            document.getElementById("section-structure-title").innerText = "Organization Structure";
+            document.getElementById("structure").innerText = "[Display the organization structure here, such as in a list or diagram.]";
+
+            document.getElementById("section-activities-title").innerText = "Activities";
+            document.getElementById("activities").innerText = "[Describe the activities or programs carried out by your organization.]";
+
+            document.getElementById("section-contact-title").innerText = "Contact";
+            document.getElementById("email").innerText = "Email: [email@example.com]";
+            document.getElementById("phone").innerText = "Phone: [Phone number]";
+            document.getElementById("address").innerText = "Address: [Full address of organization]";
+
+            document.getElementById("footer-text").innerText = "&copy; 2025 Organization Name. All rights reserved.";
+        }
+
+        function updateContentIndonesian() {
+            document.getElementById("org-name").innerText = "Nama Organisasi";
+            document.getElementById("slogan").innerText = "\"Slogan atau Tagline Organisasi\"";
+            document.getElementById("nav-vision").innerText = "Visi & Misi";
+            document.getElementById("nav-structure").innerText = "Struktur Organisasi";
+            document.getElementById("nav-activities").innerText = "Kegiatan";
+            document.getElementById("nav-contact").innerText = "Kontak";
+
+            document.getElementById("section-vision-title").innerText = "Visi & Misi";
+            document.getElementById("vision").innerText = "Visi: [Tulis visi organisasi di sini]";
+            document.getElementById("mission").innerText = "Misi: [Tulis misi organisasi di sini]";
+
+            document.getElementById("section-structure-title").innerText = "Struktur Organisasi";
+            document.getElementById("structure").innerText = "[Tampilkan struktur organisasi di sini, misalnya dalam bentuk daftar atau diagram.]";
+
+            document.getElementById("section-activities-title").innerText = "Kegiatan";
+            document.getElementById("activities").innerText = "[Deskripsikan kegiatan atau program yang dilakukan oleh organisasi Anda.]";
+
+            document.getElementById("section-contact-title").innerText = "Kontak";
+            document.getElementById("email").innerText = "Email: [email@example.com]";
+            document.getElementById("phone").innerText = "Telepon: [Nomor telepon]";
+            document.getElementById("address").innerText = "Alamat: [Alamat lengkap organisasi]";
+
+            document.getElementById("footer-text").innerText = "&copy; 2025 Nama Organisasi. All rights reserved.";
+        }
+    </script>
+</body>
+</html>
